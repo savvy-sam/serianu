@@ -13,7 +13,6 @@ const Home = () => {
         </Card>
         </div>
         <div className="md:display-none">
-
         </div>
     </div>
     </>

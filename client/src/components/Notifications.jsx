@@ -1,26 +1,31 @@
-import { useEffect, useState } from "react"
+import { useEffect} from "react"
 import PropTypes from 'prop-types';
+import { useValue } from "../context/ContextProvider";
 
-const Notifications = (props) => {
+const Notifications = () => {
   
-  const {show=true, duration=2500, variant}=props
+  //const {show=false, duration=2500, variant, message}=props
 
-  const [showAlert, setShow]= useState(show)
+  const {state: {alert}, dispatch}= useValue();
 
   useEffect(() => {
-    if (showAlert === true) {
-      const timer = setTimeout(() => setShow(false), duration);
+    if (alert.open === true) {
+    const timer = setTimeout(() => dispatch({
+        type: 'UPDATE_ALERT',
+        payload: {open: false, duration: 5000, message: ""}
+    }), alert.duration);
       return () => clearTimeout(timer);
     }
-  }, [showAlert, duration]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [alert.duration, alert.open]);
 
-  if(!(showAlert===true)) return null
+  if(!(alert.open===true)) return null
 
   return (
-    variant === "danger" ? (
+    alert.variant === "danger" ? (
       <div className="bg-orange-100 border-l-4 border-orange-500 text-orange-700 p-4" role="alert">
-        <p className="font-bold">Be Warned</p>
-        <p>Something not ideal might be happening.</p>
+        <p className="font-bold">Error !</p>
+        <p>{alert.message}</p>
       </div>
     ) : (
       <div className="bg-teal-100 border-t-4 border-teal-500 rounded-b text-teal-900 px-4 py-3 shadow-md" role="alert">
@@ -31,8 +36,8 @@ const Notifications = (props) => {
             </svg>
           </div>
           <div>
-            <p className="font-bold">Our privacy policy has changed</p>
-            <p className="text-sm">Make sure you know how these changes affect you.</p>
+            <p className="font-bold">Success</p>
+            <p className="text-sm">{alert.message}</p>
           </div>
         </div>
       </div>
@@ -43,6 +48,7 @@ const Notifications = (props) => {
 
 Notifications.propTypes ={
     variant: PropTypes.string,
+    message: PropTypes.string,
     duration: PropTypes.number,
     show: PropTypes.bool,
 }
