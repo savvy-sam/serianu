@@ -4,8 +4,6 @@ import { useValue } from "../context/ContextProvider";
 
 const Notifications = () => {
   
-  //const {show=false, duration=2500, variant, message}=props
-
   const {state: {alert}, dispatch}= useValue();
 
   useEffect(() => {

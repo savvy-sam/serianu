@@ -7,8 +7,9 @@ export default {
   theme: {
     extend: {
       backgroundImage:{
-        explosion1: 'url("/explosion_1.jpg")',
+        gaming: 'url("/gaming_background.jpg")',
         starsPurple: 'url("/stars_purple.avif")',
+        site: 'url("/site-bg.svg")',
         stars: 'url("/stars.avif")',
       } 
     },

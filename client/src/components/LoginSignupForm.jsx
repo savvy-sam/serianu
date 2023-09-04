@@ -15,7 +15,7 @@ const LoginSignupForm = () => {
     const {dispatch}= useValue()
 
     const submit = (data)=>{
-        updateData('post', '/register', data, dispatch)
+        updateData('post', '/login', data, dispatch)
       }
     
   return (
@@ -27,9 +27,9 @@ const LoginSignupForm = () => {
         linkUrl="#"/>
     <EmailInput
          type='text'
-         placeholder='Test Email Input'
+         placeholder='Email'
          register={register}
-         name='test_email'
+         name='email'
          maximLength={50}
          ifRequired={true}
          errors={errors}/>
