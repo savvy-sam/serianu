@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
 
-
 const EmailInput = (props) => {
 
     const {type, placeholder, maximLength, label, name, ifRequired, errors, register}=props;

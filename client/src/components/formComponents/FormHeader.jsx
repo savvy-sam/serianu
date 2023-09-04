@@ -1,12 +1,11 @@
 import {Link} from 'react-router-dom';
-
 import PropTypes from 'prop-types';
-
 import SerianuLogo from '../../assets/serianu_logo.webp'
+
 
 const FormHeader=(props)=>{
 
-    const {heading, paragraph, linkName, linkUrl}= props
+    const {heading, paragraph, linkName, linkUrl}= props;
 
     return(
         <div className="mb-10">

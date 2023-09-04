@@ -1,7 +1,6 @@
 
 import Notifications from "./Notifications"
 
-
 const NotificationToast = () => {
 
   return (

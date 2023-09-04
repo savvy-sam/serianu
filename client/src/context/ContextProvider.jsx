@@ -3,6 +3,7 @@ import { createContext, useContext, useReducer } from "react"
 import reducer from "./reducer"
 
 const initialState = {
+  loading: false,
   alert: {open: false, variant: 'danger', message: 'Testing Toaster', duration: 5000},
 }
 

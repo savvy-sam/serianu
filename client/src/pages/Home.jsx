@@ -3,12 +3,15 @@ import LoginSignupForm from "../components/LoginSignupForm"
 import NotificationToast from "../components/NotificationToast"
 import {motion} from 'framer-motion';
 import { fadeIn } from '../variants';
+import LoadingBackdrop from "../components/LoadingBackdrop";
 
 const Home = () => {
+
   return (
-    <div className="flex h-screen w-full lg:bg-gaming md:bg-starsPurple sm:bg-site bg-cover bg-no-repeat justify-center items-center">
+    <div className="flex h-screen mix-blend-color-dodge overflow-hidden w-full lg:bg-gaming md:bg-starsPurple sm:bg-site bg-cover bg-no-repeat justify-center items-center">
       <div className=" w-full max-w-[2000] flex flex-row justify-center items-center">
         <NotificationToast/>
+        < LoadingBackdrop/>
         <div className="w-full lg:w-1/2 justify-center items-center">
             <motion.div
               variants={fadeIn('down', 0.4)}

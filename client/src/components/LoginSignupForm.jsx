@@ -4,19 +4,19 @@ import ForgotPassword from "./formComponents/ForgotPassword"
 import FormHeader from "./formComponents/FormHeader"
 import PasswordInput from "./formComponents/PasswordInput"
 import SubmitButton from "./formComponents/SubmitButton"
-import { updateData } from "../utils/fetchMethods"
 import { useValue } from "../context/ContextProvider"
+import { updateData } from "../actions/sendAndUpdate"
 
 
 const LoginSignupForm = () => {
 
     const { register, handleSubmit, formState: { errors } } = useForm({mode: 'onChange'});
 
-    const {dispatch}= useValue()
+    const {dispatch}= useValue();
 
     const submit = (data)=>{
         updateData('post', '/login', data, dispatch)
-      }
+      };
     
   return (
    <form onSubmit={handleSubmit(submit)}>

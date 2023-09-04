@@ -2,7 +2,8 @@ import PropTypes from 'prop-types';
 
 const FormCheckBox = (props) => {
 
-  const {id, name, register, message, label}=props
+  const {id, name, register, message, label}=props;
+
   return (
     <div className="flex items-center">
           <input

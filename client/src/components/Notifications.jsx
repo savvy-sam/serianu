@@ -1,5 +1,4 @@
 import { useEffect} from "react"
-import PropTypes from 'prop-types';
 import { useValue } from "../context/ContextProvider";
 
 const Notifications = () => {
@@ -42,13 +41,6 @@ const Notifications = () => {
     )
   );
   
-}
-
-Notifications.propTypes ={
-    variant: PropTypes.string,
-    message: PropTypes.string,
-    duration: PropTypes.number,
-    show: PropTypes.bool,
 }
 
 export default Notifications

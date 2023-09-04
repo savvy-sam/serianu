@@ -20,7 +20,7 @@ const SubmitButton =(props)=>{
 SubmitButton.propTypes ={
     action: PropTypes.string,
     text: PropTypes.string,
-    handleSubmit: PropTypes.string,
+    handleSubmit: PropTypes.func,
 }
 
 export default SubmitButton;
