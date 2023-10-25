@@ -1,5 +1,6 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Home from "./pages/Home"
+import Stepper from "./pages/Stepper";
 
 function App() {
 
@@ -7,6 +8,10 @@ function App() {
     {
       path: "/",
       element: <Home/>,
+    },
+    {
+      path: "/stepper",
+      element: <Stepper/>,
     },
   ]);
 
